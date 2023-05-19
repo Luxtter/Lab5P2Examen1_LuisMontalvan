@@ -1,20 +1,41 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package labp2examen1_luismontalvan;
+
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author luism
  */
-public class Main extends javax.swing.JPanel {
+public class MainExamen extends javax.swing.JFrame {
 
     /**
-     * Creates new form Main
+     * Creates new form MainExamen
      */
-    public Main() {
+    public MainExamen() {
         initComponents();
+        jtListarE.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Localidad", "Lider"
+                }
+        ));
+        jTModificarE.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Localidad", "Lider"
+                }
+        ));
+        jTEliminarE.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Localidad", "Lider"
+                }
+        ));
     }
 
     /**
@@ -27,31 +48,33 @@ public class Main extends javax.swing.JPanel {
     private void initComponents() {
 
         btgEscuadron = new javax.swing.ButtonGroup();
-        btgPersonaH = new javax.swing.ButtonGroup();
-        btgPersonaV = new javax.swing.ButtonGroup();
+        btgHeroe = new javax.swing.ButtonGroup();
+        btgVillano = new javax.swing.ButtonGroup();
         jPBg = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
+        jtfNombreE = new javax.swing.JTextField();
+        jbtnAgregarE = new javax.swing.JButton();
+        jrbHeroe = new javax.swing.JRadioButton();
+        jrbVillanos = new javax.swing.JRadioButton();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jtfLocalidad = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jButton7 = new javax.swing.JButton();
+        jtListarE = new javax.swing.JTable();
+        jbtnListarE = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        jTModificarE = new javax.swing.JTable();
         jButton6 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        jTEliminarE = new javax.swing.JTable();
         jButton8 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -132,17 +155,23 @@ public class Main extends javax.swing.JPanel {
         jTable9 = new javax.swing.JTable();
         jButton12 = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nombre del Escuadron");
 
-        jButton1.setText("Agregar Escuadron");
+        jbtnAgregarE.setText("Agregar Escuadron");
+        jbtnAgregarE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnAgregarEMouseClicked(evt);
+            }
+        });
 
-        btgPersonaH.add(jRadioButton9);
-        jRadioButton9.setText("Heroes");
+        btgEscuadron.add(jrbHeroe);
+        jrbHeroe.setText("Heroes");
 
-        btgPersonaH.add(jRadioButton10);
-        jRadioButton10.setText("Villanos");
+        jrbVillanos.setText("Villanos");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -163,8 +192,10 @@ public class Main extends javax.swing.JPanel {
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addGap(0, 248, Short.MAX_VALUE)
         );
+
+        jLabel2.setText("Localidad");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -174,20 +205,22 @@ public class Main extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(239, 239, 239)
-                        .addComponent(jButton1))
+                        .addComponent(jbtnAgregarE))
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jrbHeroe)
+                        .addGap(18, 18, 18)
+                        .addComponent(jrbVillanos))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jRadioButton9)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton10))))
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jtfNombreE, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfLocalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -197,13 +230,17 @@ public class Main extends javax.swing.JPanel {
                 .addGap(62, 62, 62)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jtfNombreE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jRadioButton10))
-                .addGap(56, 56, 56)
-                .addComponent(jButton1)
+                    .addComponent(jLabel2)
+                    .addComponent(jtfLocalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jrbVillanos)
+                    .addComponent(jrbHeroe))
+                .addGap(32, 32, 32)
+                .addComponent(jbtnAgregarE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -211,7 +248,7 @@ public class Main extends javax.swing.JPanel {
 
         jTabbedPane2.addTab("Agregar", jPanel4);
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        jtListarE.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -222,9 +259,14 @@ public class Main extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane6.setViewportView(jTable4);
+        jScrollPane6.setViewportView(jtListarE);
 
-        jButton7.setText("Listar");
+        jbtnListarE.setText("Listar");
+        jbtnListarE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnListarEMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -237,8 +279,8 @@ public class Main extends javax.swing.JPanel {
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(258, 258, 258)
-                        .addComponent(jButton7)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                        .addComponent(jbtnListarE)))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,13 +288,13 @@ public class Main extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7)
+                .addComponent(jbtnListarE)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Listar", jPanel5);
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        jTModificarE.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -263,7 +305,7 @@ public class Main extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane7.setViewportView(jTable5);
+        jScrollPane7.setViewportView(jTModificarE);
 
         jButton6.setText("Modificar");
 
@@ -272,7 +314,7 @@ public class Main extends javax.swing.JPanel {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -292,7 +334,7 @@ public class Main extends javax.swing.JPanel {
 
         jTabbedPane2.addTab("Modificar", jPanel6);
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        jTEliminarE.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -303,7 +345,7 @@ public class Main extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane8.setViewportView(jTable6);
+        jScrollPane8.setViewportView(jTEliminarE);
 
         jButton8.setText("Eliminar");
 
@@ -319,7 +361,7 @@ public class Main extends javax.swing.JPanel {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(251, 251, 251)
                         .addComponent(jButton8)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,7 +379,7 @@ public class Main extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 595, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,7 +406,6 @@ public class Main extends javax.swing.JPanel {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        btgEscuadron.add(jRadioButton5);
         jRadioButton5.setText("Normal");
         jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -372,13 +413,10 @@ public class Main extends javax.swing.JPanel {
             }
         });
 
-        btgEscuadron.add(jRadioButton6);
         jRadioButton6.setText("Mutante");
 
-        btgEscuadron.add(jRadioButton7);
         jRadioButton7.setText("Radiactivo");
 
-        btgEscuadron.add(jRadioButton8);
         jRadioButton8.setText("Deidad");
 
         jLabel14.setText("Heroe");
@@ -391,7 +429,6 @@ public class Main extends javax.swing.JPanel {
 
         jRadioButton2.setText("Alien");
 
-        btgPersonaH.add(jRadioButton3);
         jRadioButton3.setText("Superhumano");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -657,7 +694,6 @@ public class Main extends javax.swing.JPanel {
         jTextArea3.setRows(5);
         jScrollPane9.setViewportView(jTextArea3);
 
-        btgEscuadron.add(jRadioButton11);
         jRadioButton11.setText("Normal");
         jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -665,13 +701,10 @@ public class Main extends javax.swing.JPanel {
             }
         });
 
-        btgEscuadron.add(jRadioButton12);
         jRadioButton12.setText("Mutante");
 
-        btgEscuadron.add(jRadioButton13);
         jRadioButton13.setText("Radiactivo");
 
-        btgEscuadron.add(jRadioButton14);
         jRadioButton14.setText("Deidad");
 
         jLabel22.setText("Villano");
@@ -682,10 +715,8 @@ public class Main extends javax.swing.JPanel {
 
         jLabel23.setText("Escuadron");
 
-        btgPersonaH.add(jRadioButton1);
         jRadioButton1.setText("Alien");
 
-        btgPersonaH.add(jRadioButton4);
         jRadioButton4.setText("Superhumano");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -937,8 +968,8 @@ public class Main extends javax.swing.JPanel {
 
         jPBg.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 600, 500));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -947,7 +978,21 @@ public class Main extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnAgregarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnAgregarEMouseClicked
+        String nombre = jtfNombreE.getText();
+        String tipo= "";
+        String localidad = jtfLocalidad.getText();
+        if (jrbHeroe.isSelected()) {
+            tipo="Heroes";
+        }else{
+            tipo="Villanos";
+        }
+        escuadrones.add(new Escuadron(nombre, tipo, "",localidad));
+    }//GEN-LAST:event_jbtnAgregarEMouseClicked
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
@@ -957,12 +1002,58 @@ public class Main extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton11ActionPerformed
 
+    private void jbtnListarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnListarEMouseClicked
+        DefaultTableModel model
+                = (DefaultTableModel) jtListarE.getModel();
+        if (jbtnListarE.isEnabled() == true) {
+            for (int i = 0; i < 5; i++) {
+                Object[] newrow = {escuadrones.get(i).getNombre(), escuadrones.get(i).getTipoE(), escuadrones.get(i).getLider()};
+                model.addRow(newrow);
+                jTable1.setModel(model);
+            }
+            jbtnListarE.setEnabled(false);
+        }
+    }//GEN-LAST:event_jbtnListarEMouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MainExamen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MainExamen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MainExamen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MainExamen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MainExamen().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgEscuadron;
-    private javax.swing.ButtonGroup btgPersonaH;
-    private javax.swing.ButtonGroup btgPersonaV;
-    private javax.swing.JButton jButton1;
+    private javax.swing.ButtonGroup btgHeroe;
+    private javax.swing.ButtonGroup btgVillano;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -971,7 +1062,6 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -987,6 +1077,7 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1012,7 +1103,6 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
     private javax.swing.JRadioButton jRadioButton12;
     private javax.swing.JRadioButton jRadioButton13;
@@ -1024,7 +1114,6 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
@@ -1036,6 +1125,8 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTable jTEliminarE;
+    private javax.swing.JTable jTModificarE;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -1043,15 +1134,11 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
@@ -1064,5 +1151,13 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton jbtnAgregarE;
+    private javax.swing.JButton jbtnListarE;
+    private javax.swing.JRadioButton jrbHeroe;
+    private javax.swing.JRadioButton jrbVillanos;
+    private javax.swing.JTable jtListarE;
+    private javax.swing.JTextField jtfLocalidad;
+    private javax.swing.JTextField jtfNombreE;
     // End of variables declaration//GEN-END:variables
+    ArrayList<Escuadron>escuadrones = new ArrayList();
 }
