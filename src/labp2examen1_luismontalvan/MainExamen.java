@@ -5,6 +5,7 @@
 package labp2examen1_luismontalvan;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -68,14 +69,8 @@ public class MainExamen extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jtListarE = new javax.swing.JTable();
         jbtnListarE = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTModificarE = new javax.swing.JTable();
-        jButton6 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jTEliminarE = new javax.swing.JTable();
-        jButton8 = new javax.swing.JButton();
+        jbtnEliminarE = new javax.swing.JButton();
+        jbtnModificarE = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -268,19 +263,36 @@ public class MainExamen extends javax.swing.JFrame {
             }
         });
 
+        jbtnEliminarE.setText("Eliminar");
+        jbtnEliminarE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnEliminarEMouseClicked(evt);
+            }
+        });
+
+        jbtnModificarE.setText("Modificar");
+        jbtnModificarE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnModificarEMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(258, 258, 258)
-                        .addComponent(jbtnListarE)))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(jbtnListarE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(jbtnModificarE)
+                .addGap(55, 55, 55)
+                .addComponent(jbtnEliminarE)
+                .addGap(146, 146, 146))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,92 +300,14 @@ public class MainExamen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbtnListarE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtnListarE)
+                    .addComponent(jbtnEliminarE)
+                    .addComponent(jbtnModificarE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Listar", jPanel5);
-
-        jTModificarE.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane7.setViewportView(jTModificarE);
-
-        jButton6.setText("Modificar");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(259, 259, 259)
-                .addComponent(jButton6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6)
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("Modificar", jPanel6);
-
-        jTEliminarE.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane8.setViewportView(jTEliminarE);
-
-        jButton8.setText("Eliminar");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(251, 251, 251)
-                        .addComponent(jButton8)))
-                .addContainerGap(79, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton8)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("Eliminar", jPanel7);
+        jTabbedPane2.addTab("Listar, Modificar y Eliminar", jPanel5);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -982,6 +916,60 @@ public class MainExamen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton11ActionPerformed
+
+    private void jbtnModificarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnModificarEMouseClicked
+        int columna = jtListarE.getSelectedColumn();
+        int fila = jtListarE.getSelectedRow();
+        DefaultTableModel modelo
+                    = (DefaultTableModel) jtListarE.getModel();
+        switch (columna) {
+            case 0:
+                String nombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre del escuadron");
+                modelo.setValueAt(nombre, fila, columna);
+                escuadrones.get(fila).setNombre(nombre);
+                break;
+                case 1:
+                String localidad = JOptionPane.showInputDialog(this, "Ingrese la nueva localizacion");
+                modelo.setValueAt(localidad, fila, columna);
+                escuadrones.get(fila).setLocalidad(localidad);
+                break;
+                case 2:
+                String precio = JOptionPane.showInputDialog(this, "Ingrese el nuevo lider");
+                modelo.setValueAt(precio, fila, columna);
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }//GEN-LAST:event_jbtnModificarEMouseClicked
+
+    private void jbtnEliminarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnEliminarEMouseClicked
+       
+        int fila = jtListarE.getSelectedRow();
+        DefaultTableModel modelo
+                    = (DefaultTableModel) jtListarE.getModel();
+        modelo.removeRow(fila);
+    }//GEN-LAST:event_jbtnEliminarEMouseClicked
+
+    private void jbtnListarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnListarEMouseClicked
+        DefaultTableModel model
+        = (DefaultTableModel) jtListarE.getModel();
+        if (jbtnListarE.isEnabled() == true) {
+            for (int i = 0; i < escuadrones.size(); i++) {
+                Object[] newrow = {escuadrones.get(i).getNombre(), escuadrones.get(i).getTipoE(), escuadrones.get(i).getLider()};
+                model.addRow(newrow);
+                jtListarE.setModel(model);
+            }
+            jbtnListarE.setEnabled(false);
+        }
+    }//GEN-LAST:event_jbtnListarEMouseClicked
+
     private void jbtnAgregarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnAgregarEMouseClicked
         String nombre = jtfNombreE.getText();
         String tipo= "";
@@ -993,27 +981,6 @@ public class MainExamen extends javax.swing.JFrame {
         }
         escuadrones.add(new Escuadron(nombre, tipo, "",localidad));
     }//GEN-LAST:event_jbtnAgregarEMouseClicked
-
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
-
-    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton11ActionPerformed
-
-    private void jbtnListarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnListarEMouseClicked
-        DefaultTableModel model
-                = (DefaultTableModel) jtListarE.getModel();
-        if (jbtnListarE.isEnabled() == true) {
-            for (int i = 0; i < 5; i++) {
-                Object[] newrow = {escuadrones.get(i).getNombre(), escuadrones.get(i).getTipoE(), escuadrones.get(i).getLider()};
-                model.addRow(newrow);
-                jTable1.setModel(model);
-            }
-            jbtnListarE.setEnabled(false);
-        }
-    }//GEN-LAST:event_jbtnListarEMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1061,8 +1028,6 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -1098,8 +1063,6 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
@@ -1122,11 +1085,7 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTEliminarE;
-    private javax.swing.JTable jTModificarE;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -1152,7 +1111,9 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JButton jbtnAgregarE;
+    private javax.swing.JButton jbtnEliminarE;
     private javax.swing.JButton jbtnListarE;
+    private javax.swing.JButton jbtnModificarE;
     private javax.swing.JRadioButton jrbHeroe;
     private javax.swing.JRadioButton jrbVillanos;
     private javax.swing.JTable jtListarE;
