@@ -22,10 +22,13 @@ public class SuperHumano extends Persona{
     public void setAtributoE(String atributoE) {
         this.atributoE = atributoE;
     }
-    
-    public SuperHumano(String nombre, String poder, int agilidadM, int agilidadF, int fuerza) {
-        super(nombre, poder, agilidadM, agilidadF, fuerza);
+
+    public SuperHumano(String atributoE, String nombre, String poder, String tipo, String debilidad, int agilidadM, int agilidadF, int fuerza) {
+        super(nombre, poder, tipo, debilidad, agilidadM, agilidadF, fuerza);
+        this.atributoE = atributoE;
     }
+    
+    
 
     public String getNombre() {
         return nombre;

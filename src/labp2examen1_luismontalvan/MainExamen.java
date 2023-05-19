@@ -26,7 +26,12 @@ public class MainExamen extends javax.swing.JFrame {
                     "Nombre", "Localidad", "Lider"
                 }
         ));
-        
+        jtListarE.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Poder", "Debilidad", "Fuerza","Agilidad Mental", "Agilidad Fisica","Escuadron"
+                }
+        ));
     }
 
     /**
@@ -89,9 +94,11 @@ public class MainExamen extends javax.swing.JFrame {
         jrbaH = new javax.swing.JRadioButton();
         jrbsph = new javax.swing.JRadioButton();
         jPanel9 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        jbtnListarH = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtHeroes = new javax.swing.JTable();
+        jbtnModifcarH = new javax.swing.JButton();
+        jbtnEliminarH = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -475,9 +482,14 @@ public class MainExamen extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Agregar", jPanel8);
 
-        jButton3.setText("Listar");
+        jbtnListarH.setText("Listar");
+        jbtnListarH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnListarHMouseClicked(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtHeroes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -488,30 +500,40 @@ public class MainExamen extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(jtHeroes);
+
+        jbtnModifcarH.setText("Modificar");
+
+        jbtnEliminarH.setText("Eliminar");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
-                        .addComponent(jButton3))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jbtnListarH)
+                .addGap(121, 121, 121)
+                .addComponent(jbtnModifcarH, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jbtnEliminarH)
+                .addGap(62, 62, 62))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(jButton3)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtnListarH)
+                    .addComponent(jbtnModifcarH)
+                    .addComponent(jbtnEliminarH))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Listar", jPanel9);
@@ -1008,48 +1030,51 @@ public class MainExamen extends javax.swing.JFrame {
         } else {
             String nombre = jtfNombreH.getText();
             String poder = jtfPoderH.getText();
-            String devilidad = jtfDebilidad.getText();
+            String debilidad = jtfDebilidad.getText();
             int fuerza = Integer.valueOf( jtfFuerzaH.getText());
             
             int agm = Integer.valueOf( jtfAgilidadMH.getText());
             int agf = Integer.valueOf( jtfAgilidadFH.getText());
             if (jrbNormalH.isSelected()) {
                 int esc = jcbEH.getSelectedIndex();
-                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, poder, debilidad, agm, agf, fuerza));
             } else if (jrbMutante.isSelected()) {
                 int esc = jcbEH.getSelectedIndex();
-                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, poder, debilidad, agm, agf, fuerza));
             } else if (jrbRadiactivoH.isSelected()) {
                 int esc = jcbEH.getSelectedIndex();
-                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, poder, debilidad, agm, agf, fuerza));
             } else if (jrbaH.isShowing()) {
                 int esc = jcbEH.getSelectedIndex();
-                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, poder, debilidad, agm, agf, fuerza));
             } else if (jrbdH.isSelected()) {
                 int esc = jcbEH.getSelectedIndex();
-                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, poder, debilidad, agm, agf, fuerza));
             } else if (jrbsph.isSelected()) {
                 int esc = jcbEH.getSelectedIndex();
-                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, poder, debilidad, agm, agf, fuerza));
             } else {
             }
-{
-            }
-{
-            }
-{
-            }
-{
-            }
- {
-                
-            }
+
         }
     }//GEN-LAST:event_jbtnAgregarHMouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
         
     }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jbtnListarHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnListarHMouseClicked
+       DefaultTableModel model
+        = (DefaultTableModel) jtHeroes.getModel();
+        if (jbtnListarH.isEnabled() == true) {
+            for (int i = 0; i < escuadrones.size(); i++) {
+                Object[] newrow = {escuadrones.get(i).getNombre(), escuadrones.get(i).getTipoE(), escuadrones.get(i).getLider()};
+                model.addRow(newrow);
+                jtHeroes.setModel(model);
+            }
+            jbtnListarH.setEnabled(false);
+        } 
+    }//GEN-LAST:event_jbtnListarHMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1093,7 +1118,6 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton9;
@@ -1150,7 +1174,6 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable7;
@@ -1167,7 +1190,10 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JButton jbtnAgregarE;
     private javax.swing.JButton jbtnAgregarH;
     private javax.swing.JButton jbtnEliminarE;
+    private javax.swing.JButton jbtnEliminarH;
     private javax.swing.JButton jbtnListarE;
+    private javax.swing.JButton jbtnListarH;
+    private javax.swing.JButton jbtnModifcarH;
     private javax.swing.JButton jbtnModificarE;
     private javax.swing.JComboBox<String> jcbEH;
     private javax.swing.JComboBox<String> jcbEV;
@@ -1179,6 +1205,7 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JRadioButton jrbaH;
     private javax.swing.JRadioButton jrbdH;
     private javax.swing.JRadioButton jrbsph;
+    private javax.swing.JTable jtHeroes;
     private javax.swing.JTable jtListarE;
     private javax.swing.JTextField jtfAgilidadFH;
     private javax.swing.JTextField jtfAgilidadMH;

@@ -13,9 +13,7 @@ public class Extraterrestre extends Persona{
     public Extraterrestre() {
     }
 
-    public Extraterrestre(String nombre, String poder, int agilidadM, int agilidadF, int fuerza) {
-        super(nombre, poder, agilidadM, agilidadF, fuerza);
-    }
+    
 
     @Override
     public String toString() {

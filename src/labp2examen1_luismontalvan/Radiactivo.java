@@ -15,11 +15,7 @@ public class Radiactivo extends Persona{
     public Radiactivo() {
     }
 
-    public Radiactivo(int edad, String accidente, String nombre, String poder, int agilidadM, int agilidadF, int fuerza) {
-        super(nombre, poder, agilidadM, agilidadF, fuerza);
-        this.edad = edad;
-        this.accidente = accidente;
-    }
+    
 
     public int getEdad() {
         return edad;

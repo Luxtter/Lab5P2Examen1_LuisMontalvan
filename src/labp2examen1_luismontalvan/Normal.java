@@ -13,9 +13,11 @@ public class Normal extends Persona{
     public Normal() {
     }
 
-    public Normal(String nombre, String poder, int agilidadM, int agilidadF, int fuerza) {
-        super(nombre, poder, agilidadM, agilidadF, fuerza);
+    public Normal(String nombre, String poder, String tipo, String debilidad, int agilidadM, int agilidadF, int fuerza) {
+        super(nombre, poder, tipo, debilidad, agilidadM, agilidadF, fuerza);
     }
+
+    
 
     public String getNombre() {
         return nombre;
