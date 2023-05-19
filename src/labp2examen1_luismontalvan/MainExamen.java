@@ -81,13 +81,13 @@ public class MainExamen extends javax.swing.JFrame {
         jrbNormalH = new javax.swing.JRadioButton();
         jrbMutante = new javax.swing.JRadioButton();
         jrbRadiactivoH = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
+        jrbdH = new javax.swing.JRadioButton();
         jLabel14 = new javax.swing.JLabel();
         jbtnAgregarH = new javax.swing.JButton();
         jcbEH = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        jrbaH = new javax.swing.JRadioButton();
+        jrbsph = new javax.swing.JRadioButton();
         jPanel9 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -344,8 +344,8 @@ public class MainExamen extends javax.swing.JFrame {
         btgHeroe.add(jrbRadiactivoH);
         jrbRadiactivoH.setText("Radiactivo");
 
-        btgHeroe.add(jRadioButton8);
-        jRadioButton8.setText("Deidad");
+        btgHeroe.add(jrbdH);
+        jrbdH.setText("Deidad");
 
         jLabel14.setText("Heroe");
 
@@ -360,11 +360,11 @@ public class MainExamen extends javax.swing.JFrame {
 
         jLabel15.setText("Escuadron");
 
-        btgHeroe.add(jRadioButton2);
-        jRadioButton2.setText("Alien");
+        btgHeroe.add(jrbaH);
+        jrbaH.setText("Alien");
 
-        btgHeroe.add(jRadioButton3);
-        jRadioButton3.setText("Superhumano");
+        btgHeroe.add(jrbsph);
+        jrbsph.setText("Superhumano");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -391,11 +391,11 @@ public class MainExamen extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jrbRadiactivoH)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton8)
+                        .addComponent(jrbdH)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton2)
+                        .addComponent(jrbaH)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton3)
+                        .addComponent(jrbsph)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -461,9 +461,9 @@ public class MainExamen extends javax.swing.JFrame {
                     .addComponent(jrbNormalH)
                     .addComponent(jrbMutante)
                     .addComponent(jrbRadiactivoH)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
+                    .addComponent(jrbdH)
+                    .addComponent(jrbaH)
+                    .addComponent(jrbsph))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcbEH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1013,7 +1013,37 @@ public class MainExamen extends javax.swing.JFrame {
             
             int agm = Integer.valueOf( jtfAgilidadMH.getText());
             int agf = Integer.valueOf( jtfAgilidadFH.getText());
-            if
+            if (jrbNormalH.isSelected()) {
+                int esc = jcbEH.getSelectedIndex();
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+            } else if (jrbMutante.isSelected()) {
+                int esc = jcbEH.getSelectedIndex();
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+            } else if (jrbRadiactivoH.isSelected()) {
+                int esc = jcbEH.getSelectedIndex();
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+            } else if (jrbaH.isShowing()) {
+                int esc = jcbEH.getSelectedIndex();
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+            } else if (jrbdH.isSelected()) {
+                int esc = jcbEH.getSelectedIndex();
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+            } else if (jrbsph.isSelected()) {
+                int esc = jcbEH.getSelectedIndex();
+                escuadrones.get(esc).getIntegrantes().add(new Normal(nombre, poder, agm, agf, fuerza));
+            } else {
+            }
+{
+            }
+{
+            }
+{
+            }
+{
+            }
+ {
+                
+            }
         }
     }//GEN-LAST:event_jbtnAgregarHMouseClicked
 
@@ -1106,10 +1136,7 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton12;
     private javax.swing.JRadioButton jRadioButton13;
     private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
@@ -1149,6 +1176,9 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JRadioButton jrbNormalH;
     private javax.swing.JRadioButton jrbRadiactivoH;
     private javax.swing.JRadioButton jrbVillanos;
+    private javax.swing.JRadioButton jrbaH;
+    private javax.swing.JRadioButton jrbdH;
+    private javax.swing.JRadioButton jrbsph;
     private javax.swing.JTable jtListarE;
     private javax.swing.JTextField jtfAgilidadFH;
     private javax.swing.JTextField jtfAgilidadMH;
