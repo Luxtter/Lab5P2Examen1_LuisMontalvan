@@ -2,9 +2,11 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    <Component class="javax.swing.ButtonGroup" name="btgEscuadron">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    <Component class="javax.swing.ButtonGroup" name="btgPersonaH">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btgPersonaV">
     </Component>
   </NonVisualComponents>
   <AuxValues>
@@ -155,7 +157,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton9">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup2"/>
+                              <ComponentRef name="btgPersonaH"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Heroes"/>
                           </Properties>
@@ -163,7 +165,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton10">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup2"/>
+                              <ComponentRef name="btgPersonaH"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Villanos"/>
                           </Properties>
@@ -471,6 +473,10 @@
                                           <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -556,6 +562,8 @@
                                       <Component id="jRadioButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButton7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -630,7 +638,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton5">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup1"/>
+                              <ComponentRef name="btgEscuadron"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Normal"/>
                           </Properties>
@@ -641,7 +649,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton6">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup1"/>
+                              <ComponentRef name="btgEscuadron"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Mutante"/>
                           </Properties>
@@ -649,7 +657,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton7">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup1"/>
+                              <ComponentRef name="btgEscuadron"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Radiactivo"/>
                           </Properties>
@@ -657,7 +665,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton8">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup1"/>
+                              <ComponentRef name="btgEscuadron"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Deidad"/>
                           </Properties>
@@ -690,6 +698,19 @@
                         <Component class="javax.swing.JLabel" name="jLabel15">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Escuadron"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Alien"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+                          <Properties>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="btgPersonaH"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Superhumano"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -968,6 +989,10 @@
                                           <Component id="jRadioButton13" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jRadioButton14" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -1053,6 +1078,8 @@
                                       <Component id="jRadioButton12" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButton13" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButton14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1127,7 +1154,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton11">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup1"/>
+                              <ComponentRef name="btgEscuadron"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Normal"/>
                           </Properties>
@@ -1138,7 +1165,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton12">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup1"/>
+                              <ComponentRef name="btgEscuadron"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Mutante"/>
                           </Properties>
@@ -1146,7 +1173,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton13">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup1"/>
+                              <ComponentRef name="btgEscuadron"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Radiactivo"/>
                           </Properties>
@@ -1154,7 +1181,7 @@
                         <Component class="javax.swing.JRadioButton" name="jRadioButton14">
                           <Properties>
                             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                              <ComponentRef name="buttonGroup1"/>
+                              <ComponentRef name="btgEscuadron"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Deidad"/>
                           </Properties>
@@ -1187,6 +1214,22 @@
                         <Component class="javax.swing.JLabel" name="jLabel23">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Escuadron"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+                          <Properties>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="btgPersonaH"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Alien"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+                          <Properties>
+                            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                              <ComponentRef name="btgPersonaH"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Superhumano"/>
                           </Properties>
                         </Component>
                       </SubComponents>
